@@ -1,0 +1,379 @@
+/* Initialisation de notre projet */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    /* Declaration des variables */
+
+    html {
+        --var-bg-color: #4CAF50;
+        --var-secondary-color : #3aad3e;
+        --var-texte-color: #fff;
+        --var-texte-color-drak: #333;
+        --var-bg-drak: #d9efdd;
+    }
+
+    body {
+        background-color: var(--var-bg-drak);
+        color: var(--var-texte-color-drak);
+    }
+    header {
+        height: 4rem;
+        background-color:#fff;
+        padding: 0 2rem;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        z-index: 1000;
+        top: 0;
+    }
+
+    header h2 {
+    color: var(--var-texte-color-drak);
+    }
+
+    header nav ul{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 1rem;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        color: var(--var-texte-color-drak);
+        font-weight: 500;
+        transition: o.3s;
+    }
+
+    nav ul li a:hover {
+        color: var(--var-secondary-color);
+    }
+
+    header button {
+        background-color: var(--var-secondary-color);
+        color: var(--var-texte-color);
+        border: none;
+        padding: 0.7rem 1rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    header button:hover {
+        background-color: var(--var-texte-color);
+        border: 1px solid var(--var-secondary-color);
+        color: #0f0000;
+    }
+    /* Mise en forme de la section main */
+    main {
+        padding: 2rem;
+    }
+
+    /* Section Hero */
+    #hero {
+        width: 100%;
+        height: 75vh;
+        border-radius: 5px;
+        padding: 1rem;
+        background: linear-gradient(90deg,
+            var(--var-bg-color) 15%,
+            var(--var-secondary-color) 100%
+        );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    
+    }
+
+    #hero .gauche h1 {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--var-texte-color);
+    }
+
+    #hero .gauche p {
+        font-size: clamp(1rem,2vw,1rem);
+        color: var(--var-texte-color);
+    }
+
+    #hero .gauche h3 {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--var-texte-color);
+    }
+
+    #hero .gauche ul li {
+        font-size: clamp(1rem,2vw,1rem);
+        color: var(--var-texte-color);
+    }
+
+    #hero .gauche button {
+        background-color: var(--var-texte-color);
+        color: var(--var-texte-color-drak);
+        margin-top: 1.2rem;
+        border: none;
+        padding: 0.9rem 1 rem;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .droite {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .droite img {
+        object-fit: cover;
+        z-index: 100;
+
+    }
+
+    .effets {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    .effets .cercle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        animation: animation 5s ease-in infinite;
+    }
+    
+    .cercle:nth-child(1) {
+        background: linear-gradient(90deg, var(--var-bg-drak) 15%, #2dad31 100%);
+        position: absolute;
+        right: 150px;
+        animation-delay: 4s;
+    }
+
+        .cercle:nth-child(2) {
+        background: linear-gradient(90deg, var(--var-bg-drak) 15%, #2dad31 100%);
+        position: absolute;
+        left: 120px;
+        animation-delay: 2s;
+    }
+    
+        .cercle:nth-child(3) {
+        background: linear-gradient(90deg, var(--var-bg-drak) 15%, #2dad31 100%);
+        position: absolute;
+        bottom: 10px;
+        animation-delay: 4s;
+    }
+    
+        .cercle:nth-child(4) {
+        background: linear-gradient(90deg, var(--var-bg-drak) 15%, #2dad31 100%);
+        position: absolute;
+        bottom: 10px;
+        right: 120px;
+        animation-delay: 6s;
+    }
+    @keyframes animation{
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(100px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    /* Mise en forme de la section sevice */
+
+    #services {
+        margin-top: 2rem;
+    }
+
+    .services h2 {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--var-texte-color-drak);
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .services-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: wrap;
+        gap: 1rem;
+    }
+
+    .services-list .card-service {
+        flex: 1;
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 5px;
+        position: relative;
+    }
+    
+    .card-service .icon {
+        width: 50px;
+        height: 50px;
+        background-color: aquamarine;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+
+    .card-service h2 {
+        margin: 1rem;
+    }
+
+    /* Mise en forme  de la partie album */
+
+    #album {
+        margin-top: 2rem;
+    }
+
+    #album h2 {
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    #album .photo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        border-radius: 5px;
+    }
+
+    /* Mise en forme de la section contact */
+    
+    #contact {
+        margin-top: 2rem;
+        display: flex;
+        height: calc(100vh - 200px);
+        background-color: #fff;
+    }
+
+    #contact .partie1, .partie2 {
+        flex: 1;
+        border-radius: 5px;
+        margin-top: 1rem;
+        position: relative;
+        padding: 1rem;
+        height: 100%;
+        
+    }
+
+    #contact .partie1 {
+        background-color: #68d66c;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:  center;
+    }
+
+
+    #contact  h2 {
+        font-size: 2rem;
+        font-weight: 00;
+        color: var(--var-texte-color-drak);
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .partie2 form {
+        width: 90%;
+        background-color: #68d66c;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .partie2 form input, textarea {
+        width: 100%;
+        padding: 0.8em 1rem;
+        border: 1px solid #333;
+        margin-bottom: 1rem;
+        outline: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: 0.3s;
+    }
+
+    .partie2 form textarea {
+        height: 270px;
+    }
+
+    .partie2 form input:focus, textarea:focus {
+        border: 1px solid var(--var-bg-color);
+    }
+
+    .partie2 form button {
+
+        color: var(--var-bg-color);
+        border: 1px solid #333;
+        padding: 0.9rem 1rem;
+        border-radius: 0.3rem;
+        font-weight: 900;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    .partie2 form button:hover {
+        background-color: #0f0000;
+        color: var(--var-texte-color);
+    }
+
+    /* Mise en forme de footer */
+    
+    footer {
+        width: 100%;
+        height: 100px;
+        background-color:#fff;
+        margin-top: 2rem;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+     /* Mise en forme des reseaux */
+     
+     .reseaux {
+        position: fixed;
+        right: 0;
+        bottom: 1rem;
+        background-color: #2dad31;
+        padding: 10px;
+        border-radius: 2px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+     }
+
+    .reseaux carte {
+        width: 35px;
+        height: 35px;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .carte:hover {
+        background-color: #fff;
+        border-radius: 5px;
+    }
